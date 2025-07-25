@@ -1,0 +1,30 @@
+{
+  "name": "ergonomic-date",
+  "author": "Lucas Garron",
+  "version": "0.1.0-dev",
+  "type": "module",
+  "description": "Ergonomic date formatting wrapper.",
+  "repository": "github:lgarron/ergonomic-date.js",
+  "license": "MIT",
+  "main": "./dist/lib/ergonomic-date/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/ergonomic-date/index.d.ts",
+      "import": "./dist/lib/ergonomic-date/index.js"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.2",
+    "@cubing/dev-config": "^0.3.6",
+    "@types/bun": "^1.2.19",
+    "esbuild": "^0.25.8"
+  },
+  "files": [
+    "./dist/",
+    "./src/"
+  ],
+  "scripts": {
+    "prepublishOnly": "make prepublishOnly"
+  }
+}
