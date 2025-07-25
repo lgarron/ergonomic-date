@@ -1,4 +1,4 @@
-import { ErgonomicDate } from "../src";
+import { ErgonomicDate } from "ergonomic-date";
 
 const date = new ErgonomicDate();
 

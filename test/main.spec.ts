@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { ErgonomicDate } from "../src";
+import { ErgonomicDate } from "ergonomic-date";
 
 process.env.TZ = "America/Los_Angeles";
 

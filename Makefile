@@ -15,7 +15,7 @@ test: setup
 	bun run ./test/example.ts
 
 .PHONY: lint
-lint: lint-biome lint-tsc
+lint: lint-biome lint-tsc lint-readme
 
 .PHONY: lint-biome
 lint-biome: setup
@@ -24,10 +24,16 @@ lint-biome: setup
 .PHONY: lint-tsc
 lint-tsc: setup
 	bun x tsc --noEmit --project .
+	bun x tsc --noEmit --project ./test/tsconfig.json
+
+.PHONY: lint-readme
+lint-readme:
+	bun x readme-cli-help --check-only --fence "ts example" "cat test/example.ts"
 
 .PHONY: format
 format: setup
 	bun x @biomejs/biome check --write
+	bun x readme-cli-help --fence "ts example" "cat test/example.ts"
 
 .PHONY: setup
 setup:
