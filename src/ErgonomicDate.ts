@@ -102,7 +102,7 @@ export class ErgonomicDate {
   }
 
   /**
-   * Example: `unixtime-1753410109.localdate-2025-07-24T`
+   * Example: `unixtime-1753410109.localtime-2025-07-24T19-21-49`
    *
    * This particularly for naming files in a way that is:
    *
