@@ -115,4 +115,24 @@ export class ErgonomicDate {
   get multipurposeTimestamp(): string {
     return `unixtime-${this.unixtimeSeconds}.localtime-${this.localYearMonthDayTime}`;
   }
+
+  /**
+   * Parses the formats that are returned by:
+   *
+   * - `.multipurposeDatestamp`
+   * - `.multipurposeTimestamp`
+   *
+   * This does *not* parse other formats of any kind. Any other format will return in an error being thrown.
+   */
+  static parseMultipurposeDateOrTimestamp(s: string) {
+    const match = s.match(
+      /^unixtime-(\d+)\.local(date|time)-\d+-\d{2}-\d{2}(T\d{2}-\d{2}-\d{2})?$/,
+    );
+    if (!match) {
+      throw new Error("Invalid format.");
+    }
+    // TODO: perform some checks on the local time part?
+    const [_, secondsString, ...__] = match;
+    return new ErgonomicDate(parseInt(secondsString) * 1000);
+  }
 }
