@@ -135,4 +135,32 @@ export class ErgonomicDate {
     const [_, secondsString, ...__] = match;
     return new ErgonomicDate(parseInt(secondsString) * 1000);
   }
+
+  static compare(a: ErgonomicDate, b: ErgonomicDate): number {
+    return a.unixtimeMilliseconds - b.unixtimeMilliseconds;
+  }
+
+  static earliest(ergonomicDates: ErgonomicDate[]): ErgonomicDate | null {
+    let earliestDate: ErgonomicDate | null = null;
+    for (const ergonomicDate of ergonomicDates) {
+      if (earliestDate === null) {
+        earliestDate = ergonomicDate;
+      } else if (ErgonomicDate.compare(ergonomicDate, earliestDate) < 0) {
+        earliestDate = ergonomicDate;
+      }
+    }
+    return earliestDate;
+  }
+
+  static latest(ergonomicDates: ErgonomicDate[]): ErgonomicDate | null {
+    let earliestDate: ErgonomicDate | null = null;
+    for (const ergonomicDate of ergonomicDates) {
+      if (earliestDate === null) {
+        earliestDate = ergonomicDate;
+      } else if (ErgonomicDate.compare(ergonomicDate, earliestDate) > 0) {
+        earliestDate = ergonomicDate;
+      }
+    }
+    return earliestDate;
+  }
 }

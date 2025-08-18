@@ -23,3 +23,23 @@ test("ErgonomicDate.parseMultipurposeDateOrTimestamp(…)", () => {
         .unixtimeMilliseconds,
   ).toThrow("Invalid format.");
 });
+
+test("ErgonomicDate.earliest(…)", () => {
+  const a = new ErgonomicDate(1753410100000);
+  const b = new ErgonomicDate(1753410101000);
+  const c = new ErgonomicDate(1753410102000);
+
+  expect(ErgonomicDate.earliest([c, b, a])?.unixtimeMilliseconds).toEqual(
+    a.unixtimeMilliseconds,
+  );
+});
+
+test("ErgonomicDate.latest(…)", () => {
+  const a = new ErgonomicDate(1753410100000);
+  const b = new ErgonomicDate(1753410101000);
+  const c = new ErgonomicDate(1753410102000);
+
+  expect(ErgonomicDate.latest([c, b, a])?.unixtimeMilliseconds).toEqual(
+    c.unixtimeMilliseconds,
+  );
+});
