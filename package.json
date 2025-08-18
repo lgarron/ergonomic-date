@@ -1,7 +1,7 @@
 {
   "name": "ergonomic-date",
   "author": "Lucas Garron",
-  "version": "0.1.1-dev",
+  "version": "0.1.1",
   "type": "module",
   "description": "Ergonomic date formatting wrapper.",
   "repository": "github:lgarron/ergonomic-date.js",
