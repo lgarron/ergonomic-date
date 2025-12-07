@@ -28,12 +28,12 @@ lint-tsc: setup
 
 .PHONY: lint-readme
 lint-readme:
-	bun x readme-cli-help --check-only --fence "ts example" "cat test/example.ts"
+	bun x readme-cli-help check
 
 .PHONY: format
 format: setup
 	bun x @biomejs/biome check --write
-	bun x readme-cli-help --fence "ts example" "cat test/example.ts"
+	bun x readme-cli-help update
 
 .PHONY: setup
 setup:

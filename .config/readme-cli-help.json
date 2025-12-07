@@ -1,0 +1,12 @@
+{
+  "files": {
+    "./README.md": {
+      "blocks": [
+        {
+          "fence": "ts example",
+          "command": ["cat", "./test/example.ts"]
+        }
+      ]
+    }
+  }
+}
