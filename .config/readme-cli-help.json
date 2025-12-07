@@ -1,9 +1,10 @@
 {
+  "$schema": "../node_modules/readme-cli-help/schema.json",
   "files": {
     "./README.md": {
-      "blocks": [
+      "codeFences": [
         {
-          "fence": "ts example",
+          "infoString": "ts example",
           "command": ["cat", "./test/example.ts"]
         }
       ]
