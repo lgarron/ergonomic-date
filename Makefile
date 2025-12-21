@@ -10,7 +10,7 @@ build-js: setup
 
 .PHONY: build-types
 build-types: setup
-	bun x tsc --project ./tsconfig.build.json
+	bun x -- bun-dx --package typescript tsc -- --project ./tsconfig.build.json
 
 .PHONY: test
 test: setup
@@ -22,25 +22,25 @@ lint: lint-biome lint-tsc lint-readme
 
 .PHONY: lint-biome
 lint-biome: setup
-	bun x @biomejs/biome check
+	bun x -- bun-dx --package @biomejs/biome biome -- check
 
 .PHONY: lint-tsc
 lint-tsc: setup
-	bun x tsc --noEmit --project .
-	bun x tsc --noEmit --project ./test/tsconfig.json
+	bun x -- bun-dx --package typescript tsc -- --noEmit --project .
+	bun x -- bun-dx --package typescript tsc -- --noEmit --project ./test/tsconfig.json
 
 .PHONY: lint-readme
 lint-readme:
-	bun x readme-cli-help check
+	bun x -- bun-dx --package readme-cli-help readme-cli-help -- -- check
 
 .PHONY: format
 format: setup
-	bun x @biomejs/biome check --write
-	bun x readme-cli-help update
+	bun x -- bun-dx --package @biomejs/biome biome -- check --write
+	bun x -- bun-dx --package readme-cli-help readme-cli-help -- -- update
 
 .PHONY: check-package.json
 check-package.json: build
-	bun x --package @cubing/dev-config package.json check
+	bun x -- bun-dx --package @cubing/dev-config package.json -- check
 
 .PHONY: setup
 setup:
