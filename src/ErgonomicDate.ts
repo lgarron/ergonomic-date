@@ -94,7 +94,7 @@ export class ErgonomicDate {
    * - Useful for humans: contains the date.
    * - Parsable by machines: contains the exact unix time.
    * - Produces sorted times even timestamps are generated in different timezones.
-   * - Usable in portable file names.
+   * - Usable in portable file names (no characters like `:`).
    *
    */
   get multipurposeDatestamp(): string {
@@ -106,10 +106,10 @@ export class ErgonomicDate {
    *
    * This particularly for naming files in a way that is:
    *
-   * - Useful for humans: contains the date.
+   * - Useful for humans: contains the date and time.
    * - Parsable by machines: contains the exact unix time.
    * - Produces sorted times even timestamps are generated in different timezones.
-   * - Usable in portable file names.
+   * - Usable in portable file names (no characters like `:`).
    *
    */
   get multipurposeTimestamp(): string {
