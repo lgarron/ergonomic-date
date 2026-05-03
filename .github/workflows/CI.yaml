@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   build:
@@ -28,6 +28,7 @@ jobs:
       - uses: oven-sh/setup-bun@v1
       - run: make setup
       - run: make lint-biome
-      - run: make lint-tsc
+      - run: make lint-tsc-main
+      - run: make lint-tsc-test
       - run: make lint-readme
       - run: make test

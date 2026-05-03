@@ -1,5 +1,8 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": { "outDir": "./dist/lib/ergonomic-date/" },
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist/lib/ergonomic-date/"
+  },
   "include": ["./src"]
 }
