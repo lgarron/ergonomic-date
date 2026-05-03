@@ -1,6 +1,6 @@
 {
   "name": "ergonomic-date",
-  "version": "0.1.4-dev",
+  "version": "0.1.4",
   "description": "Ergonomic date formatting wrapper.",
   "author": "Lucas Garron",
   "license": "MIT",
