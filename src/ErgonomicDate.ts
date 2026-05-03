@@ -49,6 +49,12 @@ export class ErgonomicDate {
     return new Date(this.#date);
   }
 
+  /** Example: `2025` */
+  get localYear(): string {
+    const dayStringComponents = this.#dayStringComponents();
+    return dayStringComponents.year;
+  }
+
   /** Example: `2025-07` (July) */
   get localYearMonth(): string {
     const dayStringComponents = this.#dayStringComponents();

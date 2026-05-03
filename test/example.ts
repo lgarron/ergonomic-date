@@ -2,6 +2,7 @@ import { ErgonomicDate } from "ergonomic-date";
 
 const date = new ErgonomicDate();
 
+console.log(date.localYear); // 2025
 console.log(date.localYearMonth); // 2025-07
 console.log(date.localYearMonthDay); // 2025-07-24
 console.log(date.localYearMonthDayTime); // 2025-07-24T19-35-35
