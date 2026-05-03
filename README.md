@@ -1,3 +1,23 @@
+# 🏔️ Moved to Codeberg 🏔️
+
+This repo is now maintained at:
+
+<span style="font-size: 200%"><a href="https://codeberg.org/lgarron/ergonomic-date">https://codeberg.org/lgarron/ergonomic-date</a></span>
+
+Original README contents are below.
+
+<br>
+<br>
+<br>
+<br>
+
+--------
+
+<br>
+<br>
+<br>
+<br>
+
 # `ergonomic-date`
 
 Ergonomic date formatting wrapper.
